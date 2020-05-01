@@ -26,11 +26,11 @@ const listOfFetch = function (...arguments) {
           });
 }
 
-getBookmarks = function () {
+const getBookmarks = function () {
      return listOfFetch(`${BASE_URL}/bookmarks`);
 }
 
-createBookmark = function (title) {
+const createBookmark = function (title) {
      let newBookmarkInfo = JSON.stringify({
           title
      })
@@ -43,8 +43,8 @@ createBookmark = function (title) {
      });
 }
 
-editBookmark = function (id, updateData) {
-     let newBookmarkData = JSON.stringify(updateData)
+const editBookmark = function (id, updateData) {
+     let newBookmarkData = JSON.stringify(updateData);
      return listOfFetch(`${BASE_URL}/bookmarks`, {
           method: 'PATCH',
           headers: {
@@ -54,8 +54,18 @@ editBookmark = function (id, updateData) {
      });
 }
 
+const rateBookmark = function(id, updateData) {
+     let newBookmarkRating = JSON.stringify(updateData);
+     return listOfFetch(`${BASE_URL}/bookmarks`, {
+          method: 'PATCH',
+          headers: {
+               'Content-Type': 'application/json',
+          },
+          body: newBookmarkRating
+     });
+}
 
-deleteBookmark = function (id) {
+const deleteBookmark = function (id) {
      return listOfFetch(`${BASE_URL}/bookmarks`, {
           method: 'PATCH'
      });
@@ -65,5 +75,6 @@ export default {
      createBookmark,
      getBookmarks,
      editBookmark,
+     rateBookmark,
      deleteBookmark
 }

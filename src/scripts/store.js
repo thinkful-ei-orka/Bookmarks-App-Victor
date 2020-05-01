@@ -61,3 +61,49 @@ const store = {
 };
 
 */
+
+const store = {
+     bookmarks,
+     adding: true,
+     error: false,
+     filter: 0
+}
+
+const bookmarks = [];
+let adding = true;
+let error = false;
+let filter = 0;
+
+const findById = function(id) {
+     return this.bookmarks.find(currentBookmark => currentBookmark.id === id);
+}
+
+function addBookmark(bookmark) {
+     this.bookmarks.push(bookmark)
+}
+
+function findAndEdit(id, newData) {
+     let currentBookmark = this.findById(id);
+     Object.assign(currentBookmark, newData)
+}
+
+const findAndRate = function (id, newRating) {
+     let currentBookmark = this.findById(id);
+     Object.assign(currentBookmark, newRating)
+}
+
+const findAndDelete = function(id) {
+     this.bookmarks = this.bookmarks.filter(currentBookmark => currentBookmark.id !== id);
+};
+
+export default {
+     bookmarks,
+     adding,
+     error,
+     filter,
+     findById,
+     addBookmark,
+     findAndEdit,
+     findAndRate,
+     findAndDelete
+}

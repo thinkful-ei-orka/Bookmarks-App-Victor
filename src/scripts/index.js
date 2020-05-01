@@ -50,10 +50,22 @@ Follow a11y best practices
 -Refer back to the lessons on accessibility, forms*/
 
 
-import $ from jquery;
+import $ from 'jquery';
 
 import './index.css';
 
 import api from './api';
 import store from './store';
-import bookmarks from './bookmarks';
+import bookmarklist from './bookmarklist';
+
+const main = function() {
+     api.getBookmarks()
+     .then((bookmarks) => {
+          bookmarks.forEach((bookmark) => store.addBookmark(bookmark));
+          bookmarklist.render();
+     });
+     bookmarklist.
+     bookmarklist.render();
+}
+
+$(main)
