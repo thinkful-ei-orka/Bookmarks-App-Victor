@@ -1,0 +1,23 @@
+{
+  "name": "bookmarks-app",
+  "version": "1.0.0",
+  "description": "Bookmark App created for Thinkful",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinkful-ei-orka/Bookmarks-App-Victor.git"
+  },
+  "author": "Victor Jarvis",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/thinkful-ei-orka/Bookmarks-App-Victor/issues"
+  },
+  "homepage": "https://github.com/thinkful-ei-orka/Bookmarks-App-Victor#readme"
+}
